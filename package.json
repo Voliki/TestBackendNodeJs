@@ -1,0 +1,23 @@
+{
+  "name": "testbackts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "tsc tools/index.ts",
+    "start": "babel-node tools/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/hapi": "^17.0.15",
+    "@types/sequelize": "^4.27.24",
+    "hapi": "^17.5.2",
+    "node": "^10.7.0",
+    "sequelize": "^4.38.0",
+    "tedious": "^2.6.3",
+    "typescript": "^2.9.2",
+    "typings": "^2.1.1"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "baseUrl": "tools/index.ts",
+    "outDir": "build/dist",
+    "module": "es6",
+    "target": "es6",
+    // "lib": ["es5", "es6", "dom", "es2015"],
+    "lib": [ "es2017"],
+    "sourceMap": false,
+    "allowJs": false,
+    // "jsx": "react",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "types": ["node"],
+    "declaration": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": [
+    "./src/db/models/User.ts",
+    "./src/db/*.ts",
+    "./*.ts",
+    "./tools/index.ts",
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "wwwroot"
+  ]
+}
+/*
+"forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+"strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true
+*/
