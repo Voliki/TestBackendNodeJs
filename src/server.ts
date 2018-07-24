@@ -3,6 +3,10 @@ import { sequelize } from './db/sequelize';
 
 import { UserService } from './db/models/User';
 
+import { hello } from './server/routes/hello';
+import { baseUrl } from './server/routes/baseUrl';
+import { getSpecialty } from './server/routes/specialty';
+
 export class ServerHapi {
   constructor() { }
   corsHeaders: object = {
@@ -25,16 +29,13 @@ export class ServerHapi {
     port: 3001,
     routes: { cors: this.corsHeaders },
   });
-  
+
   route() {
-    this.server.route({
-      method: "GET",
-      path: "/",
-      handler: (request: Hapi.Request, reply: any) => {
-        const user: UserService = new UserService();
-        return user.getUsers();
-      }
-    });
+    const user: UserService = new UserService();
+    
+    this.server.route({...baseUrl(user)});
+    this.server.route({...hello(user)});
+    this.server.route({...getSpecialty(user)});
   }
 
   startServer() {
